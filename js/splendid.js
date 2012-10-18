@@ -176,8 +176,6 @@
 	 */
 	$.fn.splendid.interactions.prototype.getSelection = function()
 	{
-		this.splendid.focus();
-
 		var selection = {
 			start: 0,
 			end: 0,
