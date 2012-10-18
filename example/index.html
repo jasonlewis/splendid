@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Splendid Example</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/splendid.css">
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/splendid.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#markdown').splendid({
+					generate: true,
+					maps: {
+						bold: {
+							placeholder: 'Bold',
+							before: '**',
+							after: '**',
+							class: 'bold'
+						},
+						italic: {
+							placeholder: 'Italic',
+							before: '*',
+							after: '*',
+							class: 'italic'
+						},
+						ul: {
+							placeholder: 'Unordered List',
+							before: '- ',
+							class: 'ul'
+						},
+						ol: {
+							placeholder: 'Ordered List',
+							before: '1. ',
+							class: 'ol'
+						},
+					    picture: {
+							replace: '![[@Alt Text]]([@URL:http://] "[@Title]")',
+							class: 'picture'
+						},
+						link: {
+							placeholder: 'Link',
+							before: '[',
+							after: ']([@URL:http://] "[@Title]")',
+							class: 'link'
+						},
+						quote: {
+							before: '> ',
+							class: 'quote'
+						},
+						code: {
+							placeholder: 'Code',
+					    	before : '~~~~\n',
+					    	after : '\n~~~~',
+					        class: 'code'
+					    }
+				    }
+				});
+
+				$('#bbcode').splendid({
+					generate: true,
+					maps: {
+						bold: {
+							placeholder: 'Bold',
+							before: '[b]',
+							after: '[/b]',
+							class: 'bold'
+						},
+						italic: {
+							placeholder: 'Italic',
+							before: '[i]',
+							after: '[/i]',
+							class: 'italic'
+						},
+						ul: {
+							placeholder: 'Unordered List',
+							before: '[ul]\n[li]',
+							after: '[/li]\n[/ul]',
+							class: 'ul'
+						},
+						ol: {
+							placeholder: 'Ordered List',
+							before: '[ol]\n[li]',
+							after: '[/li]\n[/ol]',
+							class: 'ol'
+						},
+					    picture: {
+							replace: '[img][@URL:http://][/img]',
+							class: 'picture'
+						},
+						link: {
+							placeholder: 'Link',
+							before: '[url=[@URL:http://]]',
+							after: '[/url]',
+							class: 'link'
+						},
+						quote: {
+							before: '[quote]',
+							after: '[/quote]',
+							class: 'quote'
+						},
+						code: {
+							placeholder: 'Code',
+					    	before : '[code]\n',
+					    	after : '\n[/code]',
+					        class: 'code'
+					    }
+				    }
+				});
+			});
+		</script>
+
+		<style type="text/css">
+			textarea {
+				display: block;
+				width: 600px;
+				height: 200px;
+				font-family: Tahoma;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<textarea id="markdown" rows="20" cols="60">This is a Markdown example.</textarea>
+
+		<textarea id="bbcode" rows="20" cols="60">This is a BBCode example.</textarea>
+
+	</body>
+</html>
